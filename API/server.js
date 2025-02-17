@@ -5,8 +5,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use("/users", require("./routes/userRoutes"));
-app.use("/ads", require("./routes/adRoutes"));
+app.use("/api", require("./routes/index"));
+app.use(require("./middlewares/errorHandler"));
 
 require("./database/syncer");
 

@@ -1,0 +1,13 @@
+@ServerURL = http://localhost:3000/api
+
+### Registration
+POST {{ServerURL}}/users/registration
+Content-Type: application/json
+
+{
+    "name": "Jani",
+    "email": "jani@gmail.com",
+    "address": "Baja, Bácska Tér 1",
+    "password": "Titkosjelszo123",
+    "confirm": "Titkosjelszo123"
+}
