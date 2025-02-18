@@ -8,10 +8,6 @@ const Ad = db.define("ad",
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
     },
-    date: {
-        type: DataTypes.DATEONLY,
-        allowNull: false
-    },
     title: {
         type: DataTypes.STRING(60),
         allowNull: false
@@ -27,6 +23,10 @@ const Ad = db.define("ad",
     image: {
         type: DataTypes.STRING,
         allowNull: true
+    },
+    date: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
     }
 });
 

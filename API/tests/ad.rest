@@ -1,0 +1,52 @@
+@ServerURL = http://localhost:3000/api
+
+@token = {{login.response.body.token}}
+
+@adID = {{ad.response.body.0.id}}
+
+### Login (for token)
+# @name login
+POST {{ServerURL}}/users/login
+Content-Type: application/json
+
+{
+    "email": "jani@gmail.com",
+    "password": "Titkosjelszo123"
+}
+
+### Get ads
+# @name ad
+GET  {{ServerURL}}/ads
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Create ad
+POST {{ServerURL}}/ads/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "Bútor",
+    "description": "Nincs",
+    "price": 50000,
+    "date": "2025-02-20",
+    "image": ""
+}
+
+### Modify ad
+PATCH {{ServerURL}}/ads/{{adID}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "Ékszer",
+    "description": "Nincs",
+    "price": 35000,
+    "date": "2025-02-25",
+    "image": ""
+}
+
+### Delete ad
+DELETE {{ServerURL}}/ads/{{adID}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
