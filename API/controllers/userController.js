@@ -46,7 +46,7 @@ exports.login = async (req, res, next) => {
             return sendMessage(res, 400, false, "Hibás bejelentkezési adatok!");
         }
 
-        res.status(200).send({success: true, message: "Sikeres bejelentkezés", token: jwt.sign(user.dataValues, config.jtwSecret, {expiresIn: "2h"})})
+        res.status(200).send({success: true, message: "Sikeres bejelentkezés", token: jwt.sign(user.dataValues, config.jwtSecret, {expiresIn: "2h"})})
     }
     catch (error)
     {
