@@ -1,5 +1,5 @@
 const config = require("../config/config");
-const userServices = require("../services/userServices");
+const userService = require("../services/userService");
 const CryptoJS = require("crypto-js");
 const {sendMessage} = require("../utils");
 const jwt = require("jsonwebtoken");
@@ -19,7 +19,7 @@ exports.registration = async (req, res, next) => {
 
         // password regex
 
-        const response = await userServices.registerUser(req.body.name, req.body.email, req.body.address, CryptoJS.SHA1(req.body.password).toString());
+        const response = await userService.registerUser(req.body.name, req.body.email, req.body.address, CryptoJS.SHA1(req.body.password).toString());
 
         sendMessage(res, 201, response.success, response.text);
     }
@@ -39,14 +39,14 @@ exports.login = async (req, res, next) => {
 
         console.log(req.body);
 
-        const user = await userServices.loginUser(req.body.email, CryptoJS.SHA1(req.body.password).toString());
+        const user = await userService.loginUser(req.body.email, CryptoJS.SHA1(req.body.password).toString());
         
         if (!user)
         {
             return sendMessage(res, 400, false, "Hibás bejelentkezési adatok!");
         }
 
-        res.status(200).send({success: true, message: "Sikeres bejelentkezés", token: jwt.sign(user.dataValues, config.jtwSecret, {expiresIn: "2h"})})
+        res.status(200).send({success: true, message: "Sikeres bejelentkezés", token: jwt.sign(user.dataValues, config.jwtSecret, {expiresIn: "2h"})})
     }
     catch (error)
     {

@@ -10,5 +10,5 @@ module.exports = {
         force: process.env.DBFORCE == "true" ? true : false
     },
     port: process.env.PORT,
-    jtwSecret: process.env.JWT_SECRET
+    jwtSecret: process.env.JWT_SECRET
 };
