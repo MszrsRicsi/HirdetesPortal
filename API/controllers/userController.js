@@ -37,8 +37,6 @@ exports.login = async (req, res, next) => {
             return sendMessage(res, 400, false, "Hiányzó adatok!");
         }
 
-        console.log(req.body);
-
         const user = await userService.loginUser(req.body.email, CryptoJS.SHA1(req.body.password).toString());
         
         if (!user)

@@ -1,0 +1,35 @@
+<div class="regContainer">
+    <div class="regBox">
+        <h1>Registration</h1>
+
+        <hr>
+        
+        <div class="regBody">
+            <mat-form-field class="inputField">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput [(ngModel)]="user.name">
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>E-mail</mat-label>
+                <input type="email" matInput [(ngModel)]="user.email">
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Address</mat-label>
+                <input type="text" matInput [(ngModel)]="user.address">
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput [(ngModel)]="user.password">
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Confirm Password</mat-label>
+                <input type="password" matInput [(ngModel)]="user.confirm">
+            </mat-form-field>
+        </div>
+
+        <div class="regFooter">
+            <button mat-flat-button class="regBtn" (click)="register()">Registration</button>
+            <a routerLink="/login">I alreay have an account..</a>
+        </div>
+    </div>
+</div>
