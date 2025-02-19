@@ -1,0 +1,23 @@
+<div class="loginContainer">
+    <div class="loginBox">
+        <h1>Login</h1>
+
+        <hr>
+
+        <div class="loginBody">
+            <mat-form-field class="inputField">
+                <mat-label>E-mail</mat-label>
+                <input type="email" matInput [(ngModel)]="user.email">
+              </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput [(ngModel)]="user.password">
+            </mat-form-field>
+        </div>
+
+        <div class="loginFooter">
+            <button mat-flat-button class="loginBtn" (click)="login()">Login</button>
+            <a routerLink="/registration">I don't have an account..</a>
+        </div>
+    </div>
+</div>

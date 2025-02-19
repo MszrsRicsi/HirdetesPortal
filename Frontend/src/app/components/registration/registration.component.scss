@@ -1,0 +1,52 @@
+.regContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.regBox{
+    width: 350px;
+    height: fit-content;
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 1px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr{
+    width: 90%;
+}
+
+h1{
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color:  rgb(50, 50, 150);
+}
+
+.regBody{
+    width: 90%;
+}
+
+.inputField{
+    width: 100%;
+}
+
+.regFooter{
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.regBtn{
+    width: 100%;
+    margin-bottom: 20px;
+}
