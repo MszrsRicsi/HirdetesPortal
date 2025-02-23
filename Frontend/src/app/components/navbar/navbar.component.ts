@@ -11,15 +11,11 @@ import { RouterLink } from '@angular/router';
 
 export class NavbarComponent {
 
-  openSidebarNav()
-  {
-    document.querySelector(".sidebarNav")?.classList.add("open");
-    document.querySelector("body")!.style.overflow = "hidden";
+  openMenu(){
+    document.querySelector(".links")?.classList.add("open");
   }
 
-  closeSidebarNav()
-  {
-    document.querySelector(".sidebarNav")?.classList.remove("open");
-    document.querySelector("body")!.style.overflow = "auto";
+  closeMenu(){
+    document.querySelector(".links")?.classList.remove("open");
   }
 }

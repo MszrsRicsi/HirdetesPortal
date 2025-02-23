@@ -1,0 +1,33 @@
+*{
+    text-decoration: none;
+}
+
+.card{
+    width: 100%;
+    max-width: 700px;
+
+    margin: 5px;
+    padding: 10px;
+
+    box-shadow: 0 1px 2px 0 black;
+}
+
+.cardHeader .category{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 15px;
+    background-color: lightgray;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.cardBody{
+    text-align: justify;
+}
+
+.cardBody img{
+    width: 100%;
+    height: auto;
+}

@@ -4,23 +4,25 @@ exports.getAllAds = async () => {
     return await Ad.findAll();
 }
 
-exports.createAd = async (title, description, price, date, image) => {
+exports.createAd = async (title, description, category, price, date, image) => {
     await Ad.create({
         title,
         description,
+        category,
         price,
         date,
-        image: image ? image : "placeholder"
+        image: image ? image : "noImage.svg"
     });
 }
 
-exports.modifyAd = async (id, title, description, price, date, image) => {
+exports.modifyAd = async (id, title, description, category, price, date, image) => {
     await Ad.update({
         title,
         description,
+        category,
         price,
         date,
-        image: image ? image : "placeholder"
+        image: image ? image : "noImage.svg"
     },
     {where: {id}});
 }
