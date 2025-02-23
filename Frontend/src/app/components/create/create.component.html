@@ -1,0 +1,46 @@
+<app-navbar/>
+
+<div class="createContainer">
+    <div class="createBox">
+        <h1>Create your ad!</h1>
+
+        <hr>
+        
+        <div class="createBody">
+            <mat-form-field class="inputField">
+                <mat-label>Title</mat-label>
+                <input type="text" matInput [(ngModel)]="ad.title">
+            </mat-form-field>
+            <mat-form-field class="categorySelect">
+                <mat-label>Category</mat-label>
+                <mat-select [(ngModel)]="ad.category">
+                    <mat-option value="Furniture">Furniture</mat-option>
+                    <mat-option value="Food">Food</mat-option>
+                    <mat-option value="Book">Book</mat-option>
+                    <mat-option value="Music">Music</mat-option>
+                    <mat-option value="Travel">Travel</mat-option>
+                    <mat-option value="Technology">Technology</mat-option>
+                    <mat-option value="Art">Art</mat-option>
+                    <mat-option value="Sport">Sport</mat-option>
+                    <mat-option value="Film">Film</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Create a description.." [(ngModel)]="ad.description"></textarea>
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput [(ngModel)]="ad.price" min="0">
+            </mat-form-field>
+            <mat-form-field class="inputField">
+                <mat-label>Date</mat-label>
+                <input type="text" matInput [(ngModel)]="ad.date">
+            </mat-form-field>
+        </div>
+
+        <div class="createFooter">
+            <button mat-flat-button class="createBtn" (click)="createAd()">Create</button>
+        </div>
+    </div>
+</div>

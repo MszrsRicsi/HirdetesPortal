@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 55px;
+    position: sticky;
+    top: 0;
+
+    background-color: white;
+    box-shadow: 0 0 5px .2px black;
+    
+    z-index: 100;
+}
+
+nav h1{
+    text-indent: 10px;
+}
+
+.profile{
+    background-color: lightgray;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid gray;
+    border-radius: 100%;
+
+    margin-right: 2px;
+}
+
+.menu{
+    cursor: pointer;
+}
+
+.links a{
+    text-decoration: none;
+    color: black;
+
+    margin: 3px;
+    padding: 8px;
+
+    border-radius: 6px;
+}
+
+.linkContainer{
+    display: flex;
+    align-items: center;
+}
+
+.links a:hover{
+    background-color: lightgray;
+    transition: .2s;
+}
+
+.linkHeader .profile, .links hr, .closeMenuBtn{
+    display: none;
+}
+
+@media screen and (max-width: 620px) {
+    .links{
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        width: 200px;
+        height: 100%;
+
+        opacity: 0;
+
+        background-color: white;
+
+        box-shadow: 0 0 10px .5px black;
+        border-radius: 10px 0 0 10px;
+
+        transition: .3s;
+
+        overflow-y: scroll;
+        scrollbar-width: none;
+        overscroll-behavior: contain;
+    }
+
+    .links.open{
+        right: 0;
+        opacity: 1;
+    }
+    
+    .linkHeader .profile, .links hr, .closeMenuBtn{
+        display: flex;
+    }
+
+    .linkHeader{
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 20px;
+        padding: 3px;
+    }
+
+    .closeMenuBtn{
+        height: fit-content;
+        padding: 5px;
+
+        text-align: center;
+
+        border-radius: 20px;
+
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .closeMenuBtn:hover{
+        background-color: lightgray;
+    }
+}

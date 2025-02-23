@@ -15,12 +15,12 @@ exports.getAll = async (req, res, next) => {
 exports.create = async (req, res, next) => {
     try
     {
-        if (!req.body.title || !req.body.description || !req.body.price || !req.body.date)
+        if (!req.body.title || !req.body.description || !req.body.category || !req.body.price || !req.body.date)
         {
             return sendMessage(res, 400, false, "Hiányzó adatok!");
         }
 
-        await adService.createAd( req.body.title, req.body.description, req.body.price, req.body.date, req.body.image ? req.body.image : null);
+        await adService.createAd( req.body.title, req.body.description, req.body.category, req.body.price, req.body.date, req.body.image ? req.body.image : null);
 
         return sendMessage(res, 201, true, "Hírdetés létrehozva!");
     }
@@ -38,12 +38,12 @@ exports.modify = async (req, res, next) => {
             return sendMessage(res, 400, false, "Hiányzó adatok!");
         }
 
-        if (!req.body.title || !req.body.description || !req.body.price || !req.body.date)
+        if (!req.body.title || !req.body.description || !req.body.category || !req.body.price || !req.body.date)
         {
             return sendMessage(res, 400, false, "Hiányzó adatok!");
         }
 
-        await adService.modifyAd(req.params.adID, req.body.title, req.body.description, req.body.price, req.body.date, req.body.image ? req.body.image : null);
+        await adService.modifyAd(req.params.adID, req.body.title, req.body.description, req.body.category, req.body.price, req.body.date, req.body.image ? req.body.image : null);
 
         return sendMessage(res, 200, true, "Hírdetés módosítva!");
     }

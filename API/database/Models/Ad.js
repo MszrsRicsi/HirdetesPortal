@@ -20,8 +20,12 @@ const Ad = db.define("ad",
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    category: {
+        type: DataTypes.STRING(60),
+        allowNull: false
+    },
     image: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true
     },
     date: {

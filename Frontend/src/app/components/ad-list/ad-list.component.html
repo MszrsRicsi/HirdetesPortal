@@ -1,0 +1,5 @@
+<div class="ads">
+    <input type="text" [(ngModel)]="filterText" placeholder="Hírdetés keresése">
+
+    <app-ad class="ad" [getAd]="ad" *ngFor="let ad of ads | adFilter: filterText"/>
+</div>
